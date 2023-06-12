@@ -13,24 +13,49 @@
     }
 
     .container {
-      width: 900px;
+      width: 1200px;
+      height: 600px;
+      background-color: #ccc;
       display: flex;
       flex-wrap: wrap;
-      margin: auto;
-      /* gap: 10px; */
+      justify-content: space-around;
+      /* start center end space-around space-evenly space-between */
+      margin-inline: auto;
+      align-items: center;
+      /* start center end stretch baseline */
     }
 
     .box {
-      width: calc(100% / 3);
-      background: #ccc;
-      /* flex-shrink: 0; */
-      padding: 30px;
+      width: calc(100% / 5);
+      padding: 15px;
+    }
+
+    .box:nth-of-type(1) {
+      background-color: #fa0;
+    }
+
+    .box:nth-of-type(2) {
+      background-color: #526;
+    }
+
+    .box:nth-of-type(3) {
+      background-color: #098;
+    }
+
+    .box:nth-of-type(4) {
+      background-color: #e04;
     }
   </style>
 </head>
 
 <body>
   <div class="container">
+    <div class="box">
+      <h2>title</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam ad, excepturi adipisci quasi voluptatem dolorem
+        praesentium nulla repudiandae ducimus cupiditate aperiam ab earum veritatis ipsum tempora omnis iste quam
+        nesciunt!</p>
+    </div>
     <div class="box">
       <h2>title</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam ad, excepturi adipisci quasi voluptatem dolorem
