@@ -1,62 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet"
-        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&family=Roboto:wght@400;900&display=swap');
-
         /* css reset */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-
         body {
-            font-family: 'Roboto', 'Noto Sans TC', sans-serif;
+            font-family: 'Roboto','Noto Sans TC',sans-serif;
         }
-
         img {
             display: block;
             /* vertical-align: top; */
         }
-
         .container {
-            width: 1000px;
+            width: 1200px;
             margin-inline: auto;
             display: flex;
             flex-wrap: wrap;
         }
-
         nav {
             width: 100%;
             background-color: #000;
         }
-
         nav a {
             color: #fff;
             text-decoration: none;
-            padding-inline: 15px;
+            padding-inline:15px;
         }
-
         .nav-container {
-            width: 1000px;
+            width: 1200px;
             margin-inline: auto;
             display: flex;
             /* justify-content: space-between; */
             align-items: center;
             height: 60px;
         }
-
         .nav-menu {
             margin-left: auto;
         }
-
         header {
             width: 100%;
             /* height: 600px; */
@@ -67,34 +56,28 @@
             background-position: center;
             background-size: cover; */
         }
-
         header img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-
         .section-title {
             text-align: center;
             font-weight: 700;
             font-size: 3rem;
             margin-bottom: 80px;
         }
-
         .premium-col {
             flex: 0 0 calc(100% / 4);
             text-align: center;
         }
-
-        #premium {
+        #premium,#plan {
             padding-block: 80px;
         }
-
         #premium h3 {
             margin-bottom: 10px;
 
         }
-
         #premium i {
             font-size: 8rem;
         }
@@ -102,12 +85,63 @@
         .section-title small {
             font-size: 16px;
             font-weight: normal;
-            margin-top: 100px;
+            display: block;
+        }
+        .plan-col {
+            flex:0 0 calc(100% / 4);
+            padding:8px;
+        }
+        .plan-card {
+            border: 1px solid #999;
+            padding:15px;
+            border-radius: 10px;
+            box-shadow: 3px 3px 10px 1px rgb(0 0 0 / .4);
+            /* x y 強度 擴散  顏色 */
+            /* height: 470px; */
+            min-height: 470px;
+        }
+        .plan-list {
+            /* list-style-position: outside; */
+            margin-left:20px;
+            list-style-type:'\2713';
+            /* height: 200px; */
+            min-height:200px;
+        }
+        .plan-item::marker {
+            font-size: 30px;
+        }
+        .plan-item {
+            padding-left: 10px;
+            line-height: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .plan-title {
+            border-bottom: 1px solid #333;
+            padding-bottom: 12px;
+            margin-bottom: 12px;
+        }
+        .plan-title h3 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            letter-spacing: .5px;
+        }
+        .start-btn {
             display: inline-block;
+            background-color: #111;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 100px;
+            padding-block:12px;
+            width: 100%;
+            text-align: center;
+            margin-block:15px;
+        }
+        .plan-card small {
+            font-size: .8rem;
+            color: #555;
         }
     </style>
 </head>
-
 <body>
     <nav>
         <div class="nav-container">
@@ -158,20 +192,75 @@
                 <div class="plan-card">
                     <div class="plan-title">
                         <h3>Individual</h3>
-                        <div>NT</div>
+                        <div>NT$149.00/月</div>
                         <div>1個帳戶</div>
                     </div>
-                    <ul>
-                        <li>無廣告唱聽音樂</li>
-                        <li>無廣告唱聽音樂</li>
-                        <li>無廣告唱聽音樂</li>
+                    <ul class="plan-list">
+                        <li class="plan-item">無廣告唱聽音樂</li>
+                        <li class="plan-item">隨時隨地聽音樂，離線也可收聽</li>
+                        <li class="plan-item">隨選即播</li>
                     </ul>
-                    <a href="#">開始使用</a>
-                    <small><u>適用相關條款及細則。</u></small>
+                    <a href="#" class="start-btn">開始使用</a>
+                    <div>
+                        <small><u>適用相關條款及細則。</u></small>
+                    </div>
+                </div>
+            </div>
+            <div class="plan-col">
+                <div class="plan-card">
+                    <div class="plan-title">
+                        <h3>Duo</h3>
+                        <div>NT$198.00/月</div>
+                        <div>2個帳戶</div>
+                    </div>
+                    <ul class="plan-list">
+                        <li class="plan-item">2 個 Premium 帳戶，可供同住在一個屋簷下的伴侶使用</li>
+                        <li class="plan-item">盡情聆聽音樂，不受廣告干擾，支援離線收聽，隨選即播</li>
+                    </ul>
+                    <a href="#" class="start-btn">開始使用</a>
+                    <div>
+                        <small><u>適用相關條款及細則。</u></small>
+                    </div>
+                </div>
+            </div>
+            <div class="plan-col">
+                <div class="plan-card">
+                    <div class="plan-title">
+                        <h3>Family</h3>
+                        <div>NT$268.00/月</div>
+                        <div>6個帳戶</div>
+                    </div>
+                    <ul class="plan-list">
+                        <li class="plan-item">6 個 Premium 帳戶供同住在一個屋簷下的家人使用</li>
+                        <li class="plan-item">封鎖兒童不宜的音樂</li>
+                        <li class="plan-item">盡情聆聽音樂，不受廣告干擾，支援離線收聽，隨選即播</li>
+                    </ul>
+                    <a href="#" class="start-btn">開始使用</a>
+                    <div>
+                        <small><u>適用相關條款及細則。</u>適用於居住在同一地址的家人。</small>
+                    </div>
+                </div>
+            </div>
+            <div class="plan-col">
+                <div class="plan-card">
+                    <div class="plan-title">
+                        <h3>Student</h3>
+                        <div>NT$75.00/月</div>
+                        <div>1個帳戶</div>
+                    </div>
+                    <ul class="plan-list">
+                        <li class="plan-item">符合資格的大學生專享的特殊折扣</li>
+                        <li class="plan-item">無廣告暢聽音樂</li>
+                        <li class="plan-item">隨時隨地聽音樂，離線也可收聽</li>
+                        <li class="plan-item">隨選即播</li>
+                    </ul>
+                    <a href="#" class="start-btn">開始使用</a>
+                    <div>
+                        <small><u>適用相關條款及細則。</u>適用於在高教機構就讀、從未試用過 Premium 的學生。</small>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 </body>
-
 </html>
