@@ -1,40 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&family=Roboto:wght@400;900&display=swap');
+
         /* css reset */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
+
         body {
-            font-family: 'Roboto','Noto Sans TC',sans-serif;
+            font-family: 'Roboto', 'Noto Sans TC', sans-serif;
         }
+
         img {
             display: block;
             /* vertical-align: top; */
         }
+
         .container {
             width: 1200px;
             margin-inline: auto;
             display: flex;
             flex-wrap: wrap;
         }
+
         nav {
             width: 100%;
             background-color: #000;
         }
+
         nav a {
             color: #fff;
             text-decoration: none;
-            padding-inline:15px;
+            padding-inline: 15px;
         }
+
         .nav-container {
             width: 1200px;
             margin-inline: auto;
@@ -43,9 +52,11 @@
             align-items: center;
             height: 60px;
         }
+
         .nav-menu {
             margin-left: auto;
         }
+
         header {
             width: 100%;
             /* height: 600px; */
@@ -56,28 +67,35 @@
             background-position: center;
             background-size: cover; */
         }
+
         header img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+
         .section-title {
             text-align: center;
             font-weight: 700;
             font-size: 3rem;
             margin-bottom: 80px;
         }
+
         .premium-col {
             flex: 0 0 calc(100% / 4);
             text-align: center;
         }
-        #premium,#plan {
+
+        #premium,
+        #plan {
             padding-block: 80px;
         }
+
         #premium h3 {
             margin-bottom: 10px;
 
         }
+
         #premium i {
             font-size: 8rem;
         }
@@ -87,69 +105,128 @@
             font-weight: normal;
             display: block;
         }
+
         .plan-col {
-            flex:0 0 calc(100% / 4);
-            padding:8px;
+            flex: 0 0 calc(100% / 4);
+            padding: 8px;
         }
+
         .plan-card {
             border: 1px solid #999;
-            padding:15px;
+            padding: 15px;
             border-radius: 10px;
             box-shadow: 3px 3px 10px 1px rgb(0 0 0 / .4);
             /* x y 強度 擴散  顏色 */
             /* height: 470px; */
             min-height: 470px;
         }
+
         .plan-list {
             /* list-style-position: outside; */
-            margin-left:20px;
-            list-style-type:'\2713';
+            margin-left: 20px;
+            list-style-type: '\2713';
             /* height: 200px; */
-            min-height:200px;
+            min-height: 200px;
         }
+
         .plan-item::marker {
             font-size: 30px;
         }
+
         .plan-item {
             padding-left: 10px;
             line-height: 1.2rem;
             margin-bottom: 10px;
         }
+
         .plan-title {
             border-bottom: 1px solid #333;
             padding-bottom: 12px;
             margin-bottom: 12px;
         }
+
         .plan-title h3 {
             font-size: 1.4rem;
             margin-bottom: 5px;
             letter-spacing: .5px;
         }
+
         .start-btn {
             display: inline-block;
             background-color: #111;
             color: #fff;
             text-decoration: none;
             border-radius: 100px;
-            padding-block:12px;
+            padding-block: 12px;
             width: 100%;
             text-align: center;
-            margin-block:15px;
+            margin-block: 15px;
         }
+
         .plan-card small {
             font-size: .8rem;
             color: #555;
         }
-        footer{
+
+        footer {
             background-color: #000;
             color: #fff;
+            padding-block: 100px;
         }
-        footer a{
+
+        .footer-logo {
+            width: 20%;
+        }
+
+        footer a {
             color: #fff;
             text-decoration: none;
         }
+
+        .footer-item h4 {
+            color: #949494;
+            font-weight: normal;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-item {
+            display: flex;
+            flex-direction: column;
+            width: 250px;
+        }
+
+        .footer-nav {
+            display: flex;
+            width: 50%;
+        }
+
+        .footer-link {
+            margin-bottom: 15px;
+        }
+
+        .footer-sns {
+            width: 28%;
+            display: flex;
+            justify-content: end;
+        }
+        
+        .footer-sns i {
+            font-size: 40px;
+            line-height: 70px;
+        }
+        
+        .footer-sns a {
+            text-align: center; 
+            margin-left: 15px;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            background-color: #828282;
+        }
     </style>
 </head>
+
 <body>
     <nav>
         <div class="nav-container">
@@ -272,33 +349,38 @@
     </section>
     <footer>
         <div class="container">
-            <a href="#!">Spotify</a>
+            <a href="#!" class="footer-logo">Spotify</a>
             <div class="footer-nav">
-                <div>
+                <div class="footer-item">
                     <h4>公司簡介</h4>
-                    <a href="#!">關於我們</a>
-                    <a href="#!">職位空缺</a>
-                    <a href="#!">For the Record</a>
+                    <a href="#!" class="footer-link">關於我們</a>
+                    <a href="#!" class="footer-link">職位空缺</a>
+                    <a href="#!" class="footer-link">For the Record</a>
                 </div>
-                <div>
-                    <h4>公司簡介</h4>
-                    <a href="#!">關於我們</a>
-                    <a href="#!">職位空缺</a>
-                    <a href="#!">For the Record</a>
+                <div class="footer-item">
+                    <h4>社群</h4>
+                    <a href="#!" class="footer-link">藝人專屬</a>
+                    <a href="#!" class="footer-link">開發商</a>
+                    <a href="#!" class="footer-link">廣告宣傳</a>
+                    <a href="#!" class="footer-link">投資者</a>
+                    <a href="#!" class="footer-link">供應商</a>
+                    <a href="#!" class="footer-link">Spotify for Work</a>
                 </div>
-                <div>
-                    <h4>公司簡介</h4>
-                    <a href="#!">關於我們</a>
-                    <a href="#!">職位空缺</a>
-                    <a href="#!">For the Record</a>
+                <div class="footer-item">
+                    <h4>常用連結
+                    </h4>
+                    <a href="#!" class="footer-link">支援</a>
+                    <a href="#!" class="footer-link">網路播放器</a>
+                    <a href="#!" class="footer-link">免費行動版 App</a>
                 </div>
             </div>
             <div class="footer-sns">
                 <a href="#"><i class="lab la-instagram"></i></a>
-                <a href="#"><i class="lab la-instagram"></i></a>
-                <a href="#"><i class="lab la-instagram"></i></a>
+                <a href="#"><i class="lab la-facebook"></i></a>
+                <a href="#"><i class="lab la-twitter"></i></a>
             </div>
         </div>
     </footer>
 </body>
+
 </html>
