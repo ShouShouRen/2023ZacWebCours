@@ -45,16 +45,38 @@
         }
 
         .nav-container {
-            width: 1200px;
-            margin-inline: auto;
-            display: flex;
-            /* justify-content: space-between; */
-            align-items: center;
-            height: 60px;
+            height: fit-content;
+            flex-direction: column;
+        }
+
+        @media (min-width: 1200px) {
+            .nav-container {
+                width: 1200px;
+                margin-inline: auto;
+                display: flex;
+                flex-direction: row;
+                /* justify-content: space-between; */
+                align-items: center;
+                height: 60px;
+            }
         }
 
         .nav-menu {
-            margin-left: auto;
+            margin-left: 0;
+        }
+
+        .nav-menu a {
+            display: block;
+        }
+
+        @media (min-width: 1200px) {
+            .nav-menu {
+                margin-left: auto;
+            }
+
+            .nav-menu a {
+                display: inline-block;
+            }
         }
 
         header {
@@ -66,6 +88,32 @@
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover; */
+
+            position: relative;
+        }
+
+        .header-content {
+            background-color: #0000006e;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            /* right: 400px; */
+            /* inset: 0; */
+            margin: auto;
+
+            width: 500px;
+            height: fit-content;
+            /* min-content, max-content, fit-content */
+
+
+            margin-left: 100px;
+            padding: 50px;
+            color: #fff;
+
+            backdrop-filter: blur(3px);
+            border-radius: 15px;
+
         }
 
         header img {
@@ -174,19 +222,26 @@
             padding-block: 100px;
         }
 
-        .footer-logo {
-            width: 20%;
-        }
-
         footer a {
             color: #fff;
             text-decoration: none;
         }
 
+        .footer-logo {
+            width: 12%;
+        }
+
+        .footer-nav {
+            display: flex;
+            width: 60%;
+
+            /* background-color: #ccc; */
+        }
+
         .footer-item h4 {
-            color: #949494;
+            color: #b6b6b6;
             font-weight: normal;
-            font-size: 0.8rem;
+            font-size: .8rem;
             margin-bottom: 15px;
         }
 
@@ -194,11 +249,6 @@
             display: flex;
             flex-direction: column;
             width: 250px;
-        }
-
-        .footer-nav {
-            display: flex;
-            width: 50%;
         }
 
         .footer-link {
@@ -210,19 +260,38 @@
             display: flex;
             justify-content: end;
         }
-        
-        .footer-sns i {
-            font-size: 40px;
-            line-height: 70px;
-        }
-        
+
         .footer-sns a {
-            text-align: center; 
-            margin-left: 15px;
+            width: 60px;
+            height: 60px;
+            background-color: #2c2c2c;
             border-radius: 50%;
-            width: 70px;
-            height: 70px;
-            background-color: #828282;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-left: 10px;
+        }
+
+        .footer-sns i {
+            font-size: 2rem;
+        }
+
+        #copyright {
+            background-color: #000;
+            padding-bottom: 80px;
+        }
+
+        #copyright .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #copyright a {
+            color: #a9a9a9;
+            text-decoration: none;
+            font-size: .9rem;
+            margin-inline: 10px;
         }
     </style>
 </head>
@@ -241,6 +310,15 @@
     </nav>
     <header>
         <img src="https://picsum.photos/id/34/1200/800" alt="">
+        <div class="header-content">
+            <h2>入手 Premium，免費試用 1 個月</h2>
+            <div>之後每月只需 NT$149.00。可隨時取消。</div>
+            <div>
+                <a href="#">開始使用</a>
+                <a href="#">查看方案</a>
+            </div>
+            <small>適用相關條款及細則。已試用 Premium 的使用者不適用 1 個月的免費優惠。</small>
+        </div>
     </header>
     <section id="premium">
         <h2 class="section-title">升級Premium有什麼好處？</h2>
@@ -349,38 +427,52 @@
     </section>
     <footer>
         <div class="container">
-            <a href="#!" class="footer-logo">Spotify</a>
+            <a href="#" class="footer-logo">Spotify</a>
             <div class="footer-nav">
                 <div class="footer-item">
                     <h4>公司簡介</h4>
-                    <a href="#!" class="footer-link">關於我們</a>
-                    <a href="#!" class="footer-link">職位空缺</a>
-                    <a href="#!" class="footer-link">For the Record</a>
+                    <a href="#" class="footer-link">關於我們</a>
+                    <a href="#" class="footer-link">職位空缺</a>
+                    <a href="#" class="footer-link">For the Record</a>
                 </div>
                 <div class="footer-item">
                     <h4>社群</h4>
-                    <a href="#!" class="footer-link">藝人專屬</a>
-                    <a href="#!" class="footer-link">開發商</a>
-                    <a href="#!" class="footer-link">廣告宣傳</a>
-                    <a href="#!" class="footer-link">投資者</a>
-                    <a href="#!" class="footer-link">供應商</a>
-                    <a href="#!" class="footer-link">Spotify for Work</a>
+                    <a href="#" class="footer-link">藝人專屬</a>
+                    <a href="#" class="footer-link">開發商</a>
+                    <a href="#" class="footer-link">廣告宣傳</a>
+                    <a href="#" class="footer-link">投資者</a>
+                    <a href="#" class="footer-link">供應商</a>
+                    <a href="#" class="footer-link">Spotify for Work</a>
                 </div>
                 <div class="footer-item">
-                    <h4>常用連結
-                    </h4>
-                    <a href="#!" class="footer-link">支援</a>
-                    <a href="#!" class="footer-link">網路播放器</a>
-                    <a href="#!" class="footer-link">免費行動版 App</a>
+                    <h4>常用連結</h4>
+                    <a href="#" class="footer-link">支援</a>
+                    <a href="#" class="footer-link">網路播放器</a>
+                    <a href="#" class="footer-link">免費行動版App</a>
                 </div>
             </div>
             <div class="footer-sns">
                 <a href="#"><i class="lab la-instagram"></i></a>
-                <a href="#"><i class="lab la-facebook"></i></a>
                 <a href="#"><i class="lab la-twitter"></i></a>
+                <a href="#"><i class="lab la-facebook-f"></i></i></a>
             </div>
         </div>
     </footer>
+    <section id="copyright">
+        <div class="container">
+            <div>
+                <a href="#">法律條款</a>
+                <a href="#">法律條款</a>
+                <a href="#">法律條款</a>
+                <a href="#">法律條款</a>
+                <a href="#">法律條款</a>
+                <a href="#">法律條款</a>
+            </div>
+            <div>
+                <a href="#">&copy;Spotify AB</a>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>
