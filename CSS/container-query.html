@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin-inline: auto;
+      background-color: #aaa;
+      padding: 20px;
+    }
+
+    .box {
+      max-width: 800px;
+      background-color: #098;
+      padding: 20px;
+      container-name: box;
+      container-type: inline-size;
+    }
+
+
+    @container box (max-width: 600px) {
+      .box h2 {
+        color: #f00;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <h2>title</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit harum animi itaque distinctio reiciendis! Iusto
+        voluptatibus, voluptatem, alias ea eum ullam cumque quam modi distinctio laudantium quasi iure! Facilis,
+        cupiditate?</p>
+    </div>
+  </div>
+</body>
+
+</html>
