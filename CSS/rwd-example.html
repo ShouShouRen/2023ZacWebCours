@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      max-width: 1200px;
+      display: flex;
+      flex-wrap: wrap;
+      margin-inline: auto;
+    }
+
+    .col {
+      flex: 0 0 1;
+      padding: 15px;
+    }
+
+    @media (min-width: 600px) {
+      .col {
+        flex: 0 0 50%;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .col {
+        flex: 0 0 25%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="col">
+      <h2>title</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sequi reprehenderit quibusdam, ratione saepe
+        sint obcaecati blanditiis quo repudiandae repellendus omnis eligendi tempore nisi distinctio nostrum?
+        Reprehenderit sed ipsum vero.</p>
+    </div>
+    <div class="col">
+      <h2>title</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sequi reprehenderit quibusdam, ratione saepe
+        sint obcaecati blanditiis quo repudiandae repellendus omnis eligendi tempore nisi distinctio nostrum?
+        Reprehenderit sed ipsum vero.</p>
+    </div>
+    <div class="col">
+      <h2>title</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sequi reprehenderit quibusdam, ratione saepe
+        sint obcaecati blanditiis quo repudiandae repellendus omnis eligendi tempore nisi distinctio nostrum?
+        Reprehenderit sed ipsum vero.</p>
+    </div>
+    <div class="col">
+      <h2>title</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sequi reprehenderit quibusdam, ratione saepe
+        sint obcaecati blanditiis quo repudiandae repellendus omnis eligendi tempore nisi distinctio nostrum?
+        Reprehenderit sed ipsum vero.</p>
+    </div>
+  </div>
+</body>
+
+</html>
