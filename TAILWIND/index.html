@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style type="text/tailwindcss">
     .nav-link{
       @apply text-white hover:text-amber-600 duration-500
     }
     .btn{
-      @apply px-5 py-2 bg-rose-600 rounded-lg inline-block
+      @apply px-5 py-2 bg-rose-600 rounded-lg inline-block hover:bg-orange-300 duration-700
     }
   </style>
 </head>
+
 <body>
   <nav class="flex py-6 bg-zinc-800">
     <a href="#" class="text-white px-5">LOGO</a>
@@ -32,12 +35,117 @@
   <header class="relative w-full aspect-video">
     <img src="https://picsum.photos/id/43/1600/800" alt="" class="object-cover w-full h-full">
     <div class="container h-fit absolute inset-0 m-auto text-white">
-      <div class="w-2/3 md:w-1/2 mx-auto md:mx-0 bg-white/20 backdrop-blur-sm rounded-xl p-6 md:p-12 space-y-2 md:space-y-5">
+      <div
+        class="w-2/3 md:w-1/2 mx-auto md:mx-0 bg-white/20 backdrop-blur-sm rounded-xl p-6 md:p-12 space-y-2 md:space-y-5">
         <h1 class="text-6xl md:text8xl font-bold">HELLO</h1>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde hic nisi dolores nihil recusandae similique aliquid. Sit voluptate incidunt.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde hic nisi dolores nihil recusandae similique
+          aliquid. Sit voluptate incidunt.</p>
         <a href="#" class="btn">Go</a>
       </div>
     </div>
   </header>
+  <section class="py-24 bg-lime-100">
+    <div class="container flex flex-wrap mx-auto space-y-5 md:space-y-0">
+      <div
+        class="w-full md:w-1/3 text-start md:text-center space-y-3 px-14 md:px-4 flex items-center justify-center flex-row md:flex-col">
+        <div>
+          <i class="fa-solid fa-flask fa-5x"></i>
+        </div>
+        <div class="px-4 md:px-0">
+          <h3 class="text-3xl font-bold">title</h3>
+          <p>Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.</p>
+        </div>
+      </div>
+      <div
+        class="w-full md:w-1/3 text-start md:text-center space-y-3 px-14 md:px-4 flex items-center justify-center flex-row md:flex-col">
+        <div>
+          <i class="fa-solid fa-flask fa-5x"></i>
+        </div>
+        <div class="px-4 md:px-0">
+          <h3 class="text-3xl font-bold">title</h3>
+          <p>Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.</p>
+        </div>
+      </div>
+      <div
+        class="w-full md:w-1/3 text-start md:text-center space-y-3 px-14 md:px-4 flex items-center justify-center flex-row md:flex-col">
+        <div>
+          <i class="fa-solid fa-flask fa-5x"></i>
+        </div>
+        <div class="px-4 md:px-0">
+          <h3 class="text-3xl font-bold">title</h3>
+          <p>Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-28 bg-rose-200">
+    <div class="container flex flex-wrap mx-auto">
+      <div class="w-full sm:w-1/2 lg:w-1/4 px-16 sm:px-4 py-4">
+        <div class="space-y-4 bg-white rounded-xl overflow-hidden shadow-lg">
+          <div class="aspect-square">
+            <img src="https://picsum.photos/id/10/800/600" alt="" class="w-full h-full object-cover">
+          </div>
+          <div class="space-y-4 p-4 h-52">
+            <h3 class="text-3xl font-bold">title</h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa inventore officia itaque excepturi accusantium unde, animi nobis accusamus sit quidem.
+            </p>
+          </div>
+          <div class="p-4">
+            <a href="#" class="btn">More</a>
+          </div>
+        </div>
+      </div>
+      <div class="w-full sm:w-1/2 lg:w-1/4 px-16 sm:px-4 py-4">
+        <div class="space-y-4 bg-white rounded-xl overflow-hidden shadow-lg">
+          <div class="aspect-square">
+            <img src="https://picsum.photos/id/40/800/600" alt="" class="w-full h-full object-cover">
+          </div>
+          <div class="space-y-4 p-4 h-52">
+            <h3 class="text-3xl font-bold">title</h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa inventore officia itaque excepturi accusantium unde, animi nobis accusamus sit quidem.
+            </p>
+          </div>
+          <div class="p-4">
+            <a href="#" class="btn">More</a>
+          </div>
+        </div>
+      </div>
+      <div class="w-full sm:w-1/2 lg:w-1/4 px-16 sm:px-4 py-4">
+        <div class="space-y-4 bg-white rounded-xl overflow-hidden shadow-lg">
+          <div class="aspect-square">
+            <img src="https://picsum.photos/id/30/800/600" alt="" class="w-full h-full object-cover">
+          </div>
+          <div class="space-y-4 p-4 h-52">
+            <h3 class="text-3xl font-bold">title</h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa inventore officia itaque excepturi accusantium unde, animi nobis accusamus sit quidem.
+            </p>
+          </div>
+          <div class="p-4">
+            <a href="#" class="btn">More</a>
+          </div>
+        </div>
+      </div>
+      <div class="w-full sm:w-1/2 lg:w-1/4 px-16 sm:px-4 py-4">
+        <div class="space-y-4 bg-white rounded-xl overflow-hidden shadow-lg">
+          <div class="aspect-square">
+            <img src="https://picsum.photos/id/20/800/600" alt="" class="w-full h-full object-cover">
+          </div>
+          <div class="space-y-4 p-4 h-52">
+            <h3 class="text-3xl font-bold">title</h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa inventore officia itaque excepturi accusantium unde, animi nobis accusamus sit quidem.
+            </p>
+          </div>
+          <div class="p-4">
+            <a href="#" class="btn">More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </body>
+
 </html>
