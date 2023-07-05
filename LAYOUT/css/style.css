@@ -1,28 +1,33 @@
-header {
-  width: 100%;
-  /* height: 600px; */
-  aspect-ratio: 16 / 9;
-  /* clip-path: polygon(0 0,100% 0,100% 80%,50% 100%,0 80%); */
-  /* clip-path: polygon(0 0,100% 0,100% calc(100% - 15vw),0 100%); */
-  /* clip-path: circle(); */
-  position: relative;
-  background-color: #fa0;
-}
+/* header { */
+/* width: 100%; */
+/* height: 600px; */
+/* aspect-ratio: 16 / 9; */
+/* clip-path: polygon(0 0,100% 0,100% 80%,50% 100%,0 80%); */
+/* clip-path: polygon(0 0,100% 0,100% calc(100% - 15vw),0 100%); */
+/* clip-path: circle(); */
+/* position: relative;
+  background-color: #fa0; */
+/* } */
 /* header img{
   width: 100%;
   height: 100%;
   object-fit: cover;
 } */
+.uk-panel img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+}
 header img {
   position: absolute;
   top: 100%;
 }
 section {
   width: 100%;
-  height: calc(600px + 15vw);
+  /* height: calc(600px + 15vw); */
   /* background-color: var(--blue); */
 
-  /* margin-top: -15vw; */
+  margin-bottom: 8vw;
 }
 /* https://getwaves.io/ */
 /* course */
@@ -38,7 +43,7 @@ section {
   opacity: 1;
 }
 .course-card:hover .cover img {
-  opacity: 0.3;
+  opacity: 0.5;
 }
 .cover::after {
   opacity: 0;
@@ -46,13 +51,19 @@ section {
   font-size: 18px;
   color: #414141;
   font-weight: bolder;
-  display: block;
+  display: grid;
+  place-items: center;
+  position: absolute;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: fit-content;
-  transition: all ease 1.3s;
+  width: 100%;
+  height: 100%;
+  width: 100%;
+  height: 100%;
+  transition: all ease 1.2s;
+  backdrop-filter: blur(5px);
 }
 .cover {
   width: 100%;
@@ -74,7 +85,7 @@ section {
   height: 100%;
   object-fit: cover;
   aspect-ratio: 4 / 3;
-  transition: all ease 1.6s;
+  transition: all ease 1.2s;
 }
 .info {
   padding: 40px 12px 12px 12px;
@@ -108,9 +119,49 @@ section {
 .author-info {
   padding-left: 15px;
 }
-.author-name {
-  /* color: #ccc; */
-}
+
 .author-company {
   color: #ccc;
+}
+
+#people {
+  padding-block: 150px;
+  background-color: #004419;
+}
+
+.people-card {
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  transition: 0.6s;
+  
+  /* display: flex;
+  flex-direction: column; */
+}
+.people-card:hover {
+  box-shadow: 4px 4px 15px 0px rgb(0 0 0 / 0.7);
+}
+.people-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+.people-info {
+  padding: 12px;
+}
+.people-info h3 {
+  margin-bottom: 30px;
+}
+.people-info p {
+  margin-bottom: 30px;
+  color: #454545;
+}
+.people-nav {
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+.people-nav a {
+  color: #013e39;
 }

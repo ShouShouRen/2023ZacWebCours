@@ -23,6 +23,10 @@
   flex: 1 0 240px;
 } */
 
+.col-three {
+  flex: 1 0 400px;
+}
+
 .col-1 {
   flex: 0 0 calc(100% / 12 * 1);
 }
