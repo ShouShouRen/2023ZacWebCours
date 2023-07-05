@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            coffee: {
+              100: '#944e1d',
+              200: '#944888',
+            },
+            primary: 'pink'
+          }
+        },
+        screens: {
+          'sm': '520px',
+          'md': '768px',
+          'xl': '1200px',
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    .my-container{
+      @apply container flex flex-wrap mx-auto
+    }
+    .btn{
+      @apply inline-block px-6 py-2 bg-rose-400 text-white hover:bg-rose-800 duration-500 rounded-lg
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <h1 class="text-4xl font-bold text-red-400-500 bg-slate-300 p-4">Hello Tailwind</h1> -->
+  <div class="w-[100px] h-[100px] bg-[#098]"></div>
+  <nav class="flex py-3 bg-[#222]">
+    <a href="" class="text-coffee-200 hover:text-red-400-500 duration-500">logo</a>
+    <div class="ml-auto">
+      <a href="#" class="text-black px-2">link</a>
+      <a href="#" class="text-black px-2">link</a>
+      <a href="#" class="text-black px-2">link</a>
+      <a href="#" class="text-black px-2">link</a>
+    </div>
+  </nav>
+  <div class="my-container">
+    <div class="xl:w-1/4 sm:w-1/2 xl:text-red-400 text-lime-400 w-full p-4">
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus illum assumenda voluptatum necessitatibus
+        quam, suscipit fuga, ipsa reprehenderit dolorem culpa dignissimos quisquam ullam debitis consequatur rerum
+        obcaecati ipsum dicta aliquam.
+      </p>
+      <a href="#" class="btn">Link</a>
+    </div>
+    <div class="xl:w-1/4 sm:w-1/2 xl:text-red-400 text-lime-400 w-full p-4">
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus illum assumenda voluptatum necessitatibus
+        quam, suscipit fuga, ipsa reprehenderit dolorem culpa dignissimos quisquam ullam debitis consequatur rerum
+        obcaecati ipsum dicta aliquam.
+      </p>
+    </div>
+    <div class="xl:w-1/4 sm:w-1/2 xl:text-red-400 text-lime-400 w-full p-4">
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus illum assumenda voluptatum necessitatibus
+        quam, suscipit fuga, ipsa reprehenderit dolorem culpa dignissimos quisquam ullam debitis consequatur rerum
+        obcaecati ipsum dicta aliquam.
+      </p>
+    </div>
+    <div class="xl:w-1/4 sm:w-1/2 xl:text-red-400 text-lime-400 w-full p-4">
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus illum assumenda voluptatum necessitatibus
+        quam, suscipit fuga, ipsa reprehenderit dolorem culpa dignissimos quisquam ullam debitis consequatur rerum
+        obcaecati ipsum dicta aliquam.
+      </p>
+    </div>
+  </div>
+</body>
+
+</html>
