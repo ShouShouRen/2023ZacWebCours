@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // let a = new Array();
+    // a[0] = 'red tea';
+    // a[1] = 'milk tea';
+    // a[2] = 'green tea';
+
+    let a = ['red tea','milk tea','green tea'];
+    // console.log(a);
+    // console.log(a[0]);
+    // console.log(a[1]);
+    // console.log(a[2]);
+
+    // console.log(...a);
+
+    // for(let i = 0; i < a.length; i++){
+    //   console.log(a[i]);
+    // }
+    // console.log(a.length);
+
+    // for in 可取得陣列的索引值
+    for (let data in a) {
+      console.log(data);
+      // console.log(a[data]);
+    }
+
+    // for in 可取得陣列內容
+    for(let data of a){
+      console.log(data);
+    }
+
+    // forEach 可同時讀取陣列與索引值
+
+
+    // a.push('coffee');
+    // a.pop();
+
+    // a.unshift('coffee');
+    // a.shift();
+    
+    console.log(a);
+
+  </script>
+</body>
+
+</html>
