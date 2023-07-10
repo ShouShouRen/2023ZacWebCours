@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let drinks = [
+      {
+        id: 1,
+        name: "熟成紅茶",
+        price: 30
+      },
+      {
+        id: 2,
+        name: "奶茶",
+        price: 50
+      },
+      {
+        id: 3,
+        name: "綠茶",
+        price: 40
+      },
+      {
+        id: 4,
+        name: "紅茶",
+        price: 20
+      }
+    ];
+    // for(let drink of drinks){
+    //   console.log(drink.name);
+    // }
+
+
+    // for (let data of drinks) {
+    //   console.log(data);
+    // }
+
+    // drinks.forEach(function(data, idx){
+    //   console.log(data.name);
+    //   console.log(idx);
+    // })
+
+    let drinks_map = drinks.map(function (data) {
+      return data;
+    })
+    console.log(drinks_map);
+    
+
+  </script>
+</body>
+
+</html>
