@@ -29,6 +29,11 @@
         id: 4,
         name: "紅茶",
         price: 20
+      },
+      {
+        id: 5,
+        name: "多多",
+        price: 60
       }
     ];
     // for(let drink of drinks){
@@ -49,7 +54,20 @@
       return data;
     })
     console.log(drinks_map);
-    
+
+    // filter
+    let drinks_expensive = drinks.filter(function (data) {
+      return data.name.indexOf('綠茶') > -1;
+    });
+    console.log(...drinks_expensive);
+
+    let drinks_new = drinks.filter(function (data) {
+      return data.name != "綠茶";
+    })
+    console.log(drinks_new)
+
+    // let str = "hello";
+    // console.log(str.indexOf('e'));
 
   </script>
 </body>
