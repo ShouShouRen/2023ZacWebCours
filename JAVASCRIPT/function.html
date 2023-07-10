@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 具名函式
+    function a() {
+      let x = 10;
+      let y = 15;
+      return x * y;
+    }
+    function b(x, y) {
+      return x * y;
+    }
+
+    let test = function (x, y) {
+      return x + y;
+    }
+
+    let test2 = (x) => {
+      return x + " hello";
+    }
+
+    console.log(test2('Peter'));
+    // 匿名函式
+    // function(){}
+
+
+    // function multiply(a, b) {
+    //   return a * b;
+    // }
+
+    
+    let multiply = function(a,b){
+      return a * b;
+    }
+    
+    console.log(multiply(11, 12));
+
+  </script>
+</body>
+
+</html>
