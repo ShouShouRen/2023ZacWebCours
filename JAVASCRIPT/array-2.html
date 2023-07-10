@@ -28,7 +28,7 @@
       {
         id: 4,
         name: "紅茶",
-        price: 20
+        price: 30
       },
       {
         id: 5,
@@ -53,22 +53,65 @@
     let drinks_map = drinks.map(function (data) {
       return data;
     })
-    console.log(drinks_map);
+    // console.log(drinks_map);
 
     // filter
     let drinks_expensive = drinks.filter(function (data) {
       return data.name.indexOf('綠茶') > -1;
     });
-    console.log(...drinks_expensive);
+    // console.log(...drinks_expensive);
 
     let drinks_new = drinks.filter(function (data) {
       return data.name != "綠茶";
     })
-    console.log(drinks_new)
+    // console.log(drinks_new)
 
     // let str = "hello";
     // console.log(str.indexOf('e'));
 
+    // find
+
+    let drinks_find = drinks.find((data) => {
+      return data.price === 30;
+    })
+    // console.log(drinks_find);
+
+    let drinks_findIdx = drinks.findIndex((data) => {
+      return data.name.indexOf('熟成') > -1;
+    })
+    // console.log(drinks_findIdx);
+
+    let drinks_some = drinks.some((data) => {
+      return data.price === 30;
+    })
+    // console.log(drinks_some);
+
+    let drinks_every = drinks.every((data) => {
+      return data;
+    })
+    // console.log(drinks_every);
+
+    // reduce
+
+    let number = [1, 2, 3, 4, 5, 6];
+    let total = number.reduce((a, b) => {
+      return a + b;
+    })
+
+    // console.log(total);
+
+    let price = drinks.map(function (data) {
+      return data.price;
+    });
+    
+    console.log(price);
+    // console.log(...price);
+
+    let totals = price.reduce((a, b) => {
+      return a + b;
+    });
+
+    console.log(totals);
   </script>
 </body>
 
