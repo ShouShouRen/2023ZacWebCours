@@ -1,118 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-
 <body>
-  <script>
-    let drinks = [
-      {
-        id: 1,
-        name: "熟成紅茶",
-        price: 30
-      },
-      {
-        id: 2,
-        name: "奶茶",
-        price: 50
-      },
-      {
-        id: 3,
-        name: "綠茶",
-        price: 40
-      },
-      {
-        id: 4,
-        name: "紅茶",
-        price: 30
-      },
-      {
-        id: 5,
-        name: "多多",
-        price: 60
-      }
-    ];
-    // for(let drink of drinks){
-    //   console.log(drink.name);
-    // }
+    <script>
+        // let drinks = ['熟成紅茶','熟成歐蕾','春芽綠茶','春芽冷露'];
+        let drinks = [
+            {
+                id:1,
+                name:'熟成紅茶',
+                price: 30
+            },
+            {
+                id:2,
+                name:'熟成歐蕾',
+                price: 50
+            },
+            {
+                id:3,
+                name:'春芽綠茶',
+                price: 30
+            },
+            {
+                id:4,
+                name:'春芽冷露',
+                price: 45
+            },
+        ];
+        // for(let drink of drinks){
+        //     console.log(drink.name);
+        // }
 
+        // forEach
+        // drinks.forEach(function(data,idx){
+        //     console.log(data.name);
+        //     console.log(idx);
+        // })
 
-    // for (let data of drinks) {
-    //   console.log(data);
-    // }
+        // map
+        let drinks_map = drinks.map(function(data){
+            return data.name;
+        })
+        console.log(drinks_map);
 
-    // drinks.forEach(function(data, idx){
-    //   console.log(data.name);
-    //   console.log(idx);
-    // })
+        // filter
+        let drinks_expensive = drinks.filter(function(data){
+            return data.price > 40;
+        })
+        console.log(drinks_expensive);
 
-    let drinks_map = drinks.map(function (data) {
-      return data;
-    })
-    // console.log(drinks_map);
+        let drinks_tea = drinks.filter(function(data){
+            return data.name.indexOf('春芽') > -1;
+        })
+        console.log(drinks_tea);
 
-    // filter
-    let drinks_expensive = drinks.filter(function (data) {
-      return data.name.indexOf('綠茶') > -1;
-    });
-    // console.log(...drinks_expensive);
+        let drinks_new = drinks.filter(function(data){
+            return data.name != '春芽綠茶';
+        })
+        console.log(drinks_new);
+        // let str = 'hello';
+        // console.log(str.indexOf('z'));
 
-    let drinks_new = drinks.filter(function (data) {
-      return data.name != "綠茶";
-    })
-    // console.log(drinks_new)
+        // find
+        let drinks_find = drinks.find( data => data.name.indexOf('春芽') > -1);
+        console.log('test'+ drinks_find)
 
-    // let str = "hello";
-    // console.log(str.indexOf('e'));
+        // findIndex
+        let drinks_findIndex = drinks.findIndex(function(data){
+            return data.name.indexOf('春芽') > -1;
+        })
+        console.log(drinks_findIndex);
 
-    // find
+        // some
+        let drinks_some = drinks.some(function(data){
+            return data.name.indexOf('春芽') > -1;
+        })
+        console.log(drinks_some);
+        // every
+        let drinks_every = drinks.every(function(data){
+            return data.name === '熟成紅茶';
+        })
+        console.log(drinks_every);
 
-    let drinks_find = drinks.find((data) => {
-      return data.price === 30;
-    })
-    // console.log(drinks_find);
+        // reduce
 
-    let drinks_findIdx = drinks.findIndex((data) => {
-      return data.name.indexOf('熟成') > -1;
-    })
-    // console.log(drinks_findIdx);
+        // let num = [12,22,32,42];
+        // let total  = num.reduce(function(a,b){
+        //     return a + b;
+        // })
 
-    let drinks_some = drinks.some((data) => {
-      return data.price === 30;
-    })
-    // console.log(drinks_some);
+        
+        // let price = drinks.map(function(data){
+        //     return data.price;
+        // })
+        // let total = price.reduce(function(a,b){
+        //     return a + b;
+        // })
+        
+        let total = drinks.map((data)=>{
+            return data.price
+        }).reduce(function(a,b){
+            return a + b;
+        })
 
-    let drinks_every = drinks.every((data) => {
-      return data;
-    })
-    // console.log(drinks_every);
+        let total2 = drinks.map(data => data.price).reduce((a,b)=> a + b);
+        console.log(total2);
 
-    // reduce
-
-    let number = [1, 2, 3, 4, 5, 6];
-    let total = number.reduce((a, b) => {
-      return a + b;
-    })
-
-    // console.log(total);
-
-    let price = drinks.map(function (data) {
-      return data.price;
-    });
-    
-    console.log(price);
-    // console.log(...price);
-
-    let totals = price.reduce((a, b) => {
-      return a + b;
-    });
-
-    console.log(totals);
-  </script>
+    </script>
 </body>
-
 </html>
