@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .tabs {
+      margin: 0 auto;
+      width: 600px;
+      position: relative;
+    }
+
+    .tab-nav {
+      display: flex;
+      background-color: #222;
+    }
+
+    .tab-link {
+      color: #fff;
+      display: inline-block;
+      text-decoration: none;
+      padding: 15px;
+    }
+
+    .tab-link.active {
+      background-color: #ccc;
+    }
+
+    .tab-panel {
+      position: absolute;
+      opacity: 0;
+      visibility: hidden;
+      padding: 15px;
+      background-color: #ccc;
+      transition: all 600ms;
+      transform: translateX(50%);
+    }
+    
+    .tab-panel.active {
+      /* display: block; */
+      visibility: visible;
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="tabs">
+    <div class="tab-nav">
+      <a href="#a" data-panel="#panel-a" data-test="123" class="tab-link active">Panel A</a>
+      <a href="#b" data-panel="#panel-b" class="tab-link">Panel B</a>
+      <a href="#c" data-panel="#panel-c" class="tab-link">Panel C</a>
+    </div>
+    <div class="tab-panel active" id="panel-a">
+      <h3>title PA</h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus nemo laborum illo quisquam dolorum ex
+        esse quo ipsa ipsum maxime cumque veniam aut possimus sint reiciendis delectus molestias, illum animi!</p>
+    </div>
+    <div class="tab-panel" id="panel-b">
+      <h3>title PB</h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus nemo laborum illo quisquam dolorum ex
+        esse quo ipsa ipsum maxime cumque veniam aut possimus sint reiciendis delectus molestias, illum animi!Lorem
+        ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus nemo laborum illo quisquam dolorum ex
+        esse quo ipsa ipsum maxime cumque veniam aut possimus sint reiciendis delectus molestias, illum animi!</p>
+    </div>
+    <div class="tab-panel" id="panel-c">
+      <h3>title PC</h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus nemo laborum illo quisquam dolorum ex
+        esse quo ipsa ipsum maxime cumque veniam aut possimus sint reiciendis delectus molestias, illum animi!</p>
+    </div>
+  </div>
+</body>
+<script>
+  // let tabLink = document.querySelectorAll('.tab-link');
+  // for (let tab of tabLink) {
+  //   tab.addEventListener('click', (e) => {
+  //     document.querySelector('.tab-link.active').classList.remove('active');
+  //     e.target.classList.add('active');
+  //     let herf = e.target.getAttribute('href');
+  //     console.log(herf);
+  //     document.querySelector('.tab-panel.active').classList.remove('active');
+  //     document.querySelector(herf).classList.add('active');
+  //   })
+  // }
+
+  let tabLinks = document.querySelectorAll('.tab-link');
+  for (let tl of tabLinks) {
+    tl.onclick = e => {
+      document.querySelector('.tab-link.active').classList.remove('active');
+      e.target.classList.add('active');
+      let href = e.target.getAttribute('href');
+      let panel = e.target.dataset.panel;
+      console.log(panel);
+      // 找到目前顯示的panel並且移除active
+      document.querySelector('.tab-panel.active').classList.remove('active');
+      // 顯示點選的panel
+      document.querySelector(panel).classList.add('active');
+    }
+  }
+</script>
+
+</html>
