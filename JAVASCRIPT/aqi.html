@@ -5,12 +5,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      width: 1200px;
+      margin-inline: auto;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      border: 1px solid #888;
+      padding: 15px;
+    }
+  </style>
 </head>
 
 <body>
-  <select name="" id="select">
+  <select name="" id="county">
     <option value="">--請選擇城市--</option>
   </select>
+  <div class="container"></div>
   <script>
     let url = 'https://data.epa.gov.tw/api/v2/aqx_p_432?api_key=e8dd42e6-9b8b-43f8-991e-b3dee723a52d&limit=1000&sort=ImportDate%20desc&format=JSON';
     fetch(url).then(res => res.json()).then(result => {
@@ -20,12 +40,48 @@
       // console.log([...new Set(county)]);
       // console.log(county);
       county = [...new Set(county)];
-      for (let i = 0; i < county.length; i++) {
-        let select = document.querySelector('#select');
+      // for (let i = 0; i < county.length; i++) {
+      //   let select = document.querySelector('#select');
+      //   let option = document.createElement('option');
+      //   option.textContent = county[i];
+      //   option.value = county[i];
+      //   select.appendChild(option);
+      // }
+      for (let i of county) {
+        let select = document.querySelector('#county');
         let option = document.createElement('option');
-        option.textContent = county[i];
-        option.value = county[i];
+        option.textContent = i;
+        option.value = i;
+        option.classList.add('county-item');
         select.appendChild(option);
+      }
+      document.querySelector('#county').onchange = e => {
+        // console.log(e.target.value);
+        let container = document.querySelector('.container');
+        container.textContent = '';
+        let filterData = result.records.filter(data => data.county === e.target.value);
+        // console.log(filterData);
+        for (let item of filterData) {
+          // console.log(item);
+          let box = document.createElement('div');
+          box.classList.add('box');
+
+          let aqi = document.createElement('div');
+          aqi.classList.add('aqi');
+          aqi.append('空氣品質api:' + item.aqi);
+
+          let status = document.createElement('div');
+          status.classList.add('status');
+          status.append('空氣品質:' + item.status);
+
+          let sitename = document.createElement('div');
+          sitename.classList.add('sitename');
+          sitename.append('測站名稱:' + item.sitename);
+
+          box.append(sitename, aqi, status);
+
+          container.append(box);
+        }
       }
     })
   </script>
