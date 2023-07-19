@@ -54,6 +54,28 @@
       border-radius: 50%;
       margin: 10px;
     }
+
+    .slider-dots {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      transform: translateY(100%);
+      display: flex;
+      justify-content: center;
+      background-color: #ccc;
+    }
+
+    .slider-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: #000;
+      margin: 10px;
+    }
+
+    .slider-dot.active {
+      background-color: #908;
+    }
   </style>
 </head>
 
@@ -82,12 +104,14 @@
         <i class="fa-solid fa-caret-right"></i>
       </a>
     </div>
+    <div class="slider-dots"></div>
   </div>
 </body>
 <script>
   let imgs = document.querySelectorAll('.slider-item');
   let total = imgs.length;
   let currentIndex = 0;
+  let timeout = 3000;
   let prev = document.querySelector('.slider-prev');
   let next = document.querySelector('.slider-next');
 
@@ -98,9 +122,12 @@
     // }else{
     //   currentIndex--;
     // }
-    currentIndex = currentIndex === 0 ? total : currentIndex;
-    currentIndex = (currentIndex - 1) % total;
-    switchImage()
+    // currentIndex = currentIndex === 0 ? total : currentIndex;
+    // currentIndex = (currentIndex - 1) % total;
+    // switchImage()
+    slider('prev');
+    clearInterval(timer);
+    timer = setInterval(slider, timeout)
   }
   next.onclick = function () {
     console.log('next');
@@ -109,35 +136,73 @@
     // }else{
     //   currentIndex++;
     // }
-    currentIndex = currentIndex===total-1 ? 0 : currentIndex += 1;
+    // currentIndex = currentIndex === total - 1 ? 0 : currentIndex += 1;
     // curentIndex += 1 => currentIndex = currentIndex + 1;
-    currentIndex = (currentIndex + 1) % total;
-    switchImage()
+    // currentIndex = (currentIndex + 1) % total;
+    // switchImage()
+    slider('next');
+    clearInterval(timer);
+    timer = setInterval(slider, timeout)
   }
 
-  let slider = () => {
-    // currentIndex++;
-    // console.log(currentIndex);
-    if (currentIndex === total - 1) {
-      currentIndex = 0;
-    } else {
-      currentIndex++;
-    }
-    console.log(currentIndex);
-    // document.querySelector('.slider-item.active').classList.remove('active');
-    // imgs[currentIndex].classList.add('active');
+  // let slider = () => {
+  //   // currentIndex++;
+  //   // console.log(currentIndex);
+  //   if (currentIndex === total - 1) {
+  //     currentIndex = 0;
+  //   } else {
+  //     currentIndex++;
+  //   }
+  // console.log(currentIndex);
+  // document.querySelector('.slider-item.active').classList.remove('active');
+  // imgs[currentIndex].classList.add('active');
 
-    switchImage();
+  //   switchImage();
+  // }
+
+  function slider(direction) {
+    if (direction === 'prev') {
+      currentIndex = currentIndex === 0 ? total : currentIndex;
+      currentIndex = (currentIndex - 1) % total;
+    } else {
+      currentIndex = (currentIndex + 1) % total;
+    }
+    switchDot();
+    switchImage()
   }
 
   function switchImage() {
     document.querySelector('.slider-item.active').classList.remove('active');
     imgs[currentIndex].classList.add('active');
   }
+  function switchDot() {
+    document.querySelector('.slider-dot.active').classList.remove('active');
+    dots[currentIndex].classList.add('active');
+  }
 
-  setInterval(() => {
+  let timer = setInterval(() => {
     slider();
   }, 3000);
+
+
+  //dots
+  for (let i = 0; i < total; i++) {
+    let dot = document.createElement('span');
+    dot.dataset.idx = i;
+    dot.classList.add('slider-dot');
+    document.querySelector('.slider-dots').append(dot);
+  }
+  let dots = document.querySelectorAll('.slider-dot');
+  dots[0].classList.add('active');
+  for (let dot of dots) {
+    dot.onclick = function () {
+      currentIndex = this.dataset.idx;
+      switchImage();
+      switchDot();
+      clearInterval(timer);
+      timer = setInterval(slider, timeout);
+    }
+  }
 
 </script>
 

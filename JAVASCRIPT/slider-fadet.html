@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +11,6 @@
             margin-inline: auto;
             position: relative;
         }
-
         .slider-item {
             width: 100%;
             height: 100%;
@@ -22,12 +20,10 @@
 
             transition: all 600ms;
         }
-
         .slider-item.active {
             opacity: 1;
             visibility: visible;
         }
-
         .slider-nav {
             position: absolute;
             width: 100%;
@@ -35,25 +31,27 @@
             display: flex;
             justify-content: space-between;
         }
-        .slider-dots{
-            width: 100%;
+        .slider-dots {
             position: absolute;
+            width: 100%;
             bottom: 0;
             transform: translateY(100%);
             display: flex;
             justify-content: center;
-            align-items: center;
+            background-color: #ccc;
         }
-        .slider-dot{
-            width: 15px;
-            height: 15px;
-            background-color: #222;
+        .slider-dot {
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
+            background-color: #000;
             margin: 10px;
+        }
+        .slider-dot.active {
+            background-color: #908;
         }
     </style>
 </head>
-
 <body>
     <div class="slider">
         <div class="slider-item active">
@@ -84,51 +82,58 @@
         let imgs = document.querySelectorAll('.slider-item');
         let total = imgs.length;
         let currentIndex = 0;
+        let timeout = 10000;
         let prev = document.querySelector('.slider-prev');
         let next = document.querySelector('.slider-next');
-        let timeout = 10000;
 
-        prev.onclick = function () {
+        prev.onclick = function(){
             slider('prev');
             clearInterval(timer);
-            timer = setInterval(slider, timeout);
+            timer = setInterval(slider,timeout)
         }
-        next.onclick = function () {
+        next.onclick = function(){
             slider();
             clearInterval(timer);
-            timer = setInterval(slider, timeout);
+            timer = setInterval(slider,timeout)
         }
 
-        function slider(direction) {
-            if (direction === 'prev') {
+        function slider(direction){
+            if(direction === 'prev'){
                 currentIndex = currentIndex === 0 ? total : currentIndex;
                 currentIndex = (currentIndex - 1) % total;
-            } else {
+            }else{
                 currentIndex = (currentIndex + 1) % total;
             }
+
             switchImage()
         }
-        function switchImage() {
+        function switchImage(){
             document.querySelector('.slider-item.active').classList.remove('active');
             imgs[currentIndex].classList.add('active');
         }
         //計時器
         // setTimeout
         // setInterval
-        let timer = setInterval(slider, timeout);
+        let timer = setInterval(slider,timeout);
 
-        //  dots
-
-        for (let i = 0; i < total; i++){
+        //dots
+        for(let i=0;i<total;i++){
             let dot = document.createElement('span');
             dot.dataset.idx = i;
             dot.classList.add('slider-dot');
             document.querySelector('.slider-dots').append(dot);
-
         }
-
-
+        let dots = document.querySelectorAll('.slider-dot');
+        dots[0].classList.add('active');
+        for(let dot of dots){
+            dot.onclick = function(){
+                currentIndex = this.dataset.idx;
+                switchImage();
+                clearInterval(timer);
+                timer = setInterval(slider, timeout);
+            }
+        }
+       
     </script>
 </body>
-
 </html>
