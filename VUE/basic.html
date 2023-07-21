@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+  <!-- <div id="app">{{ message }} {{price}}</div> -->
+  <div id="app">
+    <h1>{{ title }}</h1>
+    <!-- <div>
+      <div v-for="drink in drinks">
+        {{drink}}
+      </div>
+    </div> -->
+    <ul>
+      <li v-for="(drink, idx) in drinks">{{idx}} - {{ drink.name }}-NT.{{drink.price}}</li>
+    </ul>
+  </div>
+</body>
+<script>
+  // 解構 const { createApp } = Vue
+  Vue.createApp({
+    data() {
+      return {
+        // message: "hello vue",
+        // price: 'NT.9999'
+        title: 'Hello Vue',
+        drinks: [
+          {
+            id: 1,
+            name: '熟成紅茶',
+            price: 30
+          },
+          {
+            id: 2,
+            name: '熟成歐蕾',
+            price: 50
+          },
+          {
+            id: 3,
+            name: '春芽綠茶',
+            price: 30
+          },
+          {
+            id: 4,
+            name: '春芽冷露',
+            price: 45
+          },
+        ]
+      }
+    }
+  }).mount('#app');
+</script>
+
+</html>
