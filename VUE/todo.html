@@ -45,6 +45,18 @@
 </body>
 <script>
   // 解構 const { createApp } = Vue
+  const user = {
+    name: 'john',
+    mail: 'peterchen@gmail.com',
+    gender: 'male',
+  }
+  // console.log(user.name);
+  // 物件解構
+  const {name,mail} = user;
+  console.log(name);
+  console.log(mail);
+
+  
   Vue.createApp({
     data() {
       return {
