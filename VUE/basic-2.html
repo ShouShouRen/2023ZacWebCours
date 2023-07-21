@@ -25,9 +25,17 @@
         <input type="checkbox" name="hobby" v-model="hobby" id="clip" value="剪輯">
         <label for="clip">剪輯</label>
       </div>
+
+      <select name="city" v-model="city" id="city">
+        <option value="台北">台北</option>
+        <option value="新北">新北</option>
+        <option value="桃園">桃園</option>
+        <option value="高雄">高雄</option>
+      </select>
     </form>
     <div>{{name}}</div>
     <div v-for="hobbys in hobby">{{hobbys}}</div>
+    <div v-for="citys in city">{{citys}}</div>
   </div>
   <script>
     Vue.createApp({
@@ -35,6 +43,7 @@
         return {
           name: '',
           hobby: [],
+          city: [],
         }
       }
     }).mount('#app');

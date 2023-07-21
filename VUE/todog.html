@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <form action="">
+      <input type="text" v-model="input">
+      <input type="button" value="新增事項" @click="addTodo">
+    </form>
+    <ul>
+      <li v-for="(todo, index) in todos" :key="index">
+        <input type="checkbox" v-model="todo.completed">
+        <span :style="{ textDecoration: todo.completed ? 'line-through' : 'none' }">{{ todo.text }}</span>
+        <button @click="removeTodo(index)">刪除</button>
+      </li>
+    </ul>
+  </div>
+</body>
+<script>
+  Vue.createApp({
+    data() {
+      return {
+        input: '',
+        todos: [
+          { text: '寫作業', completed: false }
+        ]
+      }
+    },
+    methods: {
+      addTodo() {
+        if (this.input.trim() !== '') {
+          this.todos.push({ text: this.input, completed: false });
+          this.input = '';
+        }
+      },
+      removeTodo(index) {
+        this.todos.splice(index, 1);
+      }
+    }
+  }).mount('#app');
+</script>
+
+</html>
