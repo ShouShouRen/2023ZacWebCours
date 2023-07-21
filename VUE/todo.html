@@ -5,17 +5,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="./unpkg.com_vue@3.3.4_dist_vue.global.js"></script>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    ul,
+    li {
+      list-style: none;
+    }
+
+    #app {
+      margin: 20px;
+    }
+
+    span {
+      padding: 16px;
+    }
+  </style>
 </head>
 
 <body>
   <div id="app">
-    <form action="">
+    <form action="javascript:;">
       <input type="text" v-model="input">
-      <input type="button" value="新增事項" @click="add()">
+      <input type="button" value="新增事項" @click.prevent="add()">
     </form>
     <ul>
-      <li v-for="todo in todos">{{todo}}</li>
+      <li v-for="(todo,index) in todos" :key="index">
+        <input type="checkbox" v-model="todo.completed">
+        <span :style="{ textDecoration: todo.completed ? 'line-through': 'none' }">{{todo.text}}</span>
+        <button @click="removeTodo(index)">刪除</button>
+      </li>
     </ul>
   </div>
 </body>
@@ -25,13 +49,18 @@
     data() {
       return {
         input: '',
-        todos: ['寫作業']
+        todos: [{ text: '寫作業', completed: false }]
       }
     },
     methods: {
-      add(){
-        this.todos.push(this.input);
-        this.input = '';
+      add() {
+        if (this.input.trim() !== '') {
+          this.todos.push({ text: this.input, completed: false });
+          this.input = '';
+        }
+      },
+      removeTodo(index) {
+        this.todos.splice(index, 1);
       }
     }
   }).mount('#app');
