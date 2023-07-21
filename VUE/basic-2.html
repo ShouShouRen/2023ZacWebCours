@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <form action="">
+      <label for="">姓名</label>
+      <!-- 單向綁定 可以讀取預設值但修改後不會被更新回去-->
+      <input type="text" v-bind:value="name">
+      <!-- 雙向綁定 會將修改的資料更新回data內的name-->
+      <input type="text" v-model="name">
+      <div>
+        <label for="hobby">興趣</label>
+        <input type="checkbox" name="hobby" v-model="hobby" id="design" value="設計">
+        <label for="design">設計</label>
+        <input type="checkbox" name="hobby" v-model="hobby" id="web" value="網站">
+        <label for="web">網站</label>
+        <input type="checkbox" name="hobby" v-model="hobby" id="clip" value="剪輯">
+        <label for="clip">剪輯</label>
+      </div>
+    </form>
+    <div>{{name}}</div>
+    <div v-for="hobbys in hobby">{{hobbys}}</div>
+  </div>
+  <script>
+    Vue.createApp({
+      data() {
+        return {
+          name: '',
+          hobby: [],
+        }
+      }
+    }).mount('#app');
+  </script>
+</body>
+
+</html>
