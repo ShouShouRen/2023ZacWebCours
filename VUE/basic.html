@@ -20,6 +20,17 @@
     <ul>
       <li v-for="(drink, idx) in drinks">{{idx}} - {{ drink.name }}-NT.{{drink.price}}</li>
     </ul>
+    <div>
+      <div v-if="qty > 5">庫存充足</div>
+      <div v-else-if="qty > 0">低庫存</div>
+      <div v-else>補貨中</div>
+    </div>
+    <div>
+      <div v-if="qty > 5">庫存充足</div>
+      <div v-show="qty > 5">庫存充足</div>
+    </div>
+    <a :href="link">Yahoo</a>
+    <a v-bind:href="link">Yahoo</a>
   </div>
 </body>
 <script>
@@ -30,6 +41,8 @@
         // message: "hello vue",
         // price: 'NT.9999'
         title: 'Hello Vue',
+        link: 'https://tw.yahoo.com/',
+        qty: 10,
         drinks: [
           {
             id: 1,
