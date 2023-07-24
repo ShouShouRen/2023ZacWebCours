@@ -5,77 +5,97 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src="./unpkg.com_vue@3.3.4_dist_vue.global.js"></script>
-  <style>
-    * {
-      padding: 0;
-      margin: 0;
-      box-sizing: border-box;
-    }
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-    ul,
-    li {
-      list-style: none;
-    }
-
-    #app {
-      margin: 20px;
-    }
-
-    span {
-      padding: 16px;
-    }
-  </style>
 </head>
 
 <body>
   <div id="app">
-    <form action="javascript:;">
+    <div>{{test}}</div>
+    <form action="">
       <input type="text" v-model="input">
-      <input type="button" value="新增事項" @click.prevent="add()">
+      <input type="submit" value="新增事項" @click.prevent="store()">
     </form>
     <ul>
-      <li v-for="(todo,index) in todos" :key="index">
-        <input type="checkbox" v-model="todo.completed">
-        <span :style="{ textDecoration: todo.completed ? 'line-through': 'none' }">{{todo.text}}</span>
-        <button @click="removeTodo(index)">刪除</button>
+      <li v-for="todo in todos">
+        <input type="checkbox" v-model="todo.isCompleted">
+        <span :style="{ textDecoration: todo.isCompleted ? 'line-through' : 'none' }">
+          {{todo.title}}
+        </span>
       </li>
     </ul>
+    <div>
+      <h3>完成</h3>
+      {{todoCompleted}}
+    </div>
+    <div>
+      <h3>未完成</h3>
+      {{todoUnCompleted}}
+    </div>
   </div>
-</body>
-<script>
-  // 解構 const { createApp } = Vue
-  const user = {
-    name: 'john',
-    mail: 'peterchen@gmail.com',
-    gender: 'male',
-  }
-  // console.log(user.name);
-  // 物件解構
-  const {name,mail} = user;
-  console.log(name);
-  console.log(mail);
+  <script>
 
-  
-  Vue.createApp({
-    data() {
-      return {
-        input: '',
-        todos: [{ text: '寫作業', completed: false }]
-      }
-    },
-    methods: {
-      add() {
-        if (this.input.trim() !== '') {
-          this.todos.push({ text: this.input, completed: false });
+    const { createApp } = Vue;
+
+    createApp({
+      data() {
+        return {
+          input: '',
+          todos: [
+            {
+              id: 1,
+              title: '寫作業',
+              isCompleted: false,
+            },
+            {
+              id: 2,
+              title: '洗衣服',
+              isCompleted: true,
+            }
+          ]
+        }
+      },
+      methods: {
+        store() {
+          this.todos.push({
+            id: Date.now(),
+            title: this.input,
+            isCompleted: false
+          });
           this.input = '';
         }
       },
-      removeTodo(index) {
-        this.todos.splice(index, 1);
+      computed: {
+        todoCompleted() {
+          return this.todos.filter(data => data.isCompleted === true);
+        },
+        todoUnCompleted() {
+          return this.todos.filter(data => data.isCompleted != true);
+        }
+      }
+    }).mount('#app');
+
+    const obj = {
+      a: 'asdf',
+      b() {
+        return 'hello';
       }
     }
-  }).mount('#app');
-</script>
+
+    console.log(obj.b());
+
+    // 解構賦值
+    const user = {
+      name: 'john',
+      mail: 'asdf@gmail.com',
+      gender: 'male'
+    }
+    // 物件解構
+    const { name, mail } = user;
+    console.log(name, mail);
+    console.log(user.name, user.mail)
+
+  </script>
+</body>
 
 </html>
