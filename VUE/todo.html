@@ -11,26 +11,36 @@
 
 <body>
   <div id="app">
-    <div>{{test}}</div>
+    <!-- <div>{{test}}</div> -->
     <form action="">
       <input type="text" v-model="input">
       <input type="submit" value="新增事項" @click.prevent="store()">
     </form>
-    <ul>
+    <!-- <ul>
       <li v-for="todo in todos">
         <input type="checkbox" v-model="todo.isCompleted">
         <span :style="{ textDecoration: todo.isCompleted ? 'line-through' : 'none' }">
           {{todo.title}}
         </span>
       </li>
-    </ul>
+    </ul> -->
     <div>
       <h3>完成</h3>
-      {{todoCompleted}}
+      <ul>
+        <li v-for="(todo, index) in todoUnCompleted" :key="todo.id">
+          <input type="checkbox" v-model="todo.isCompleted">
+          {{ todo.title }}-{{index}}
+        </li>
+      </ul>
     </div>
     <div>
       <h3>未完成</h3>
-      {{todoUnCompleted}}
+      <ul>
+        <li v-for="(todo,index) in todoCompleted" :key="todo.id">
+          <input type="checkbox" v-model="todo.isCompleted">
+          {{todo.title}}-{{index}}
+        </li>
+      </ul>
     </div>
   </div>
   <script>
