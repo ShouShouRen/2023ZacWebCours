@@ -65,7 +65,10 @@
           <button class="btn btn-sm btn-danger" @click="removeCart2(cart.id)">移除</button>
         </div>
         <hr>
-        <button class="btn btn-sm btn-outline-danger" @click="clearCart()">清空購物車</button>
+        <div v-if="carts.length === 0">購物車沒有商品請快去選購</div>
+        <!-- <p v-if="carts.length !==0">總金額：{{total}}</p> -->
+        <p>總金額：{{total}}</p>
+        <button class="btn btn-sm btn-outline-danger" @click="clearCart()" v-if="carts.length > 0">清空購物車</button>
       </div>
     </div>
     <div class="container">
@@ -114,6 +117,23 @@
         clearCart(a) {
           if (confirm('確認清空?')) {
             this.carts.length = 0;
+          }
+        },
+      },
+      computed: {
+        price() {
+          if (this.carts.length > 0) {
+            return this.carts.map(data => data.price);
+          } else {
+            return [0];
+          }
+        },
+        total() {
+          // return this.price.reduce((x, y) => Number(x) + Number(y));
+          if (this.carts.length > 0) {
+            return this.carts.map(data => data.price).reduce((x, y) => Number(x) + Number(y));
+          } else {
+            return 0;
           }
         }
       }

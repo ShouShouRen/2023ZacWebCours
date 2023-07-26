@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="unpkg.com_vue@3.3.4_dist_vue.global.js"></script>
+  <title>Document</title>
+</head>
+<div id="app">
+  <h1 v-if="weathers">天氣位置{{ weathers.name }}</h1>
+  <div v-if="weathers">
+    <p>溫度: {{ weathers.main.temp }}°C</p>
+    <p>濕度: {{ weathers.main.humidity }}%</p>
+    <p>狀態描述: {{ weathers.weather[0].description }}</p>
+  </div>
+  <p v-else>抓取資料中 ...</p>
+</div>
+
+<body>
+
+  <!-- https://api.openweathermap.org/data/2.5/weather?lat=25.0478&lon=121.5319&appid=b7355e3c73fb16f81c45f5380d193b83
+  https://api.openweathermap.org/data/2.5/weather?q=taipei&appid=b7355e3c73fb16f81c45f5380d193b83 -->
+  <script>
+    Vue.createApp({
+      data() {
+        return {
+          weathers: null,
+        };
+      },
+      // mounted() {
+      //   let url = 'https://api.openweathermap.org/data/2.5/weather?lat=25.0478&lon=121.5319&appid=b7355e3c73fb16f81c45f5380d193b83&units=metric';
+
+      //   fetch(url)
+      //     .then(response => response.json())
+      //     .then(data => {
+      //       this.weathers = data;
+      //     })
+      //     .catch(error => {
+      //       console.error('Error fetching weather data:', error);
+      //     });
+      // }
+      created() {
+        let url = 'https://api.openweathermap.org/data/2.5/weather?lat=25.0478&lon=121.5319&appid=b7355e3c73fb16f81c45f5380d193b83&units=metric';
+
+        fetch(url)
+          .then(response => response.json())
+          .then(data => {
+            this.weathers = data;
+          })
+          .catch(error => {
+            console.error('error data:', error);
+          });
+      }
+    }).mount('#app');
+  </script>
+
+</body>
+
+</html>
