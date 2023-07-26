@@ -10,9 +10,10 @@
 <div id="app">
   <h1 v-if="weathers">天氣位置{{ weathers.name }}</h1>
   <div v-if="weathers">
-    <p>溫度: {{ weathers.main.temp }}°C</p>
-    <p>濕度: {{ weathers.main.humidity }}%</p>
-    <p>狀態描述: {{ weathers.weather[0].description }}</p>
+    <p>溫度: {{ temp }}°C</p>
+    <p>濕度: {{ hum }}%</p>
+    <p>狀態描述: {{ desc }}</p>
+    <p>{{weathers.name}} 正在 {{ weathers.weather[0].main }}</p>
   </div>
   <p v-else>抓取資料中 ...</p>
 </div>
@@ -22,6 +23,7 @@
   <!-- https://api.openweathermap.org/data/2.5/weather?lat=25.0478&lon=121.5319&appid=b7355e3c73fb16f81c45f5380d193b83
   https://api.openweathermap.org/data/2.5/weather?q=taipei&appid=b7355e3c73fb16f81c45f5380d193b83 -->
   <script>
+    const { createApp } = Vue
     Vue.createApp({
       data() {
         return {
@@ -47,10 +49,25 @@
           .then(response => response.json())
           .then(data => {
             this.weathers = data;
+            console.log(data);
           })
           .catch(error => {
             console.error('error data:', error);
           });
+      },
+      computed: {
+        temp() {
+          return this.weathers.main.temp;
+        },
+        desc() {
+          return this.weathers.weather[0].description;
+        },
+        hum() {
+          return this.weathers.main.humidity;
+        },
+        icon(){
+          return this.weathers.weather[0].icon;
+        }
       }
     }).mount('#app');
   </script>
