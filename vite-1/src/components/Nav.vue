@@ -5,13 +5,13 @@
       <a href="#" class="nav-link">Link</a>
       <a href="#" class="nav-link">Link</a>
       <a href="#" class="nav-link">Link</a>
-      <a href="#" class="nav-link">Link</a>
+      <a href="#" class="nav-link text-amber-300">Link</a>
     </div>
   </nav>
 </template>
 
 <script>
-
+   import '../style.css';
 </script>
 
 <style>

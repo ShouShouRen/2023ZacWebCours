@@ -18,6 +18,7 @@ export default {
   <!-- <Title></Title>
   <Btn>add</Btn> -->
   <Nav />
+  <h1 class="text-amber-200">heell</h1>
 </template>
 
 <style>
