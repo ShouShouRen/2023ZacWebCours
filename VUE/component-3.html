@@ -11,7 +11,7 @@
 <body>
   <div id="app">
     <app-title></app-title>
-    <app-btn></app-btn>
+    <app-btn>i am slot button</app-btn>
   </div>
   <script type="module">
     import AppTitle from './js/AppTitle.js';
@@ -22,7 +22,7 @@
     Vue.createApp({
       data() {
         return {
-
+          title: 'app title'
         }
       },
       components: {
