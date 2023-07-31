@@ -1,11 +1,12 @@
 <script>
 import Nav from './components/Nav.vue';
+import HelloWorld from './components/HelloWorld.vue';
 export default {
   data() {
     return {}
   },
   components: {
-    Nav
+    Nav,HelloWorld
   }
 }
 </script>
@@ -13,5 +14,7 @@ export default {
   <h1>Vue</h1>
   <Nav></Nav>
   <router-view></router-view>
+  <hr>
+  <HelloWorld />
 </template>
 <style></style>
