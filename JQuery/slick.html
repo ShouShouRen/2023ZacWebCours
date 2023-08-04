@@ -1,75 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-  <style>
-    /* body {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <style>
+        body {
             background-color: #f47171;
-        } */
-    .slider {
-      width: 1200px;
-      margin-inline: auto;
-    }
+        }
+        .slider {
+            width: 1200px;
+            margin-inline: auto;
+        }
+        img {
+            width: 100%;
+        }
+        .slick-slide {
+            /* opacity: .6; */
+            /* margin-inline: 15px; */
+            transition: opacity 600ms;
 
-    .slick-prev::before,
-    .slick-next::before {
-      color: red;
-    }
+        }
+        .slick-center {
+            opacity:1;
+        }
+        .slick-next:before, .slick-prev:before {
+            color: #000;
+        }
 
-    img {
-      width: 100%;
-    }
-
-    .slick-slide {
-      /* opacity: .4; */
-      /* margin-inline: 15px; */
-    }
-
-    .slick-current {
-      opacity: 1;
-    }
-  </style>
+        .products {
+            max-width: 1200px;
+            margin-inline: auto;
+        }
+        .products .slick-slide {
+            margin-inline: 15px;
+        }
+    </style>
 </head>
-
 <body>
-  <div class="slider">
-    <div class="slider-item">
-      <img src="https://picsum.photos/id/34/1200/600" alt="">
+    <div class="slider">
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/34/1200/600" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/14/1200/600" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/24/1200/600" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/44/1200/600" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/54/1200/600" alt="">
+        </div>
     </div>
-    <div class="slider-item">
-      <img src="https://picsum.photos/id/14/1200/600" alt="">
+    <div class="products">
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/34/600" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/14/600" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/24/600" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/44/600" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/54/600" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/35/600" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/15/600" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/25/600" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/45/600" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/55/600" alt="">
+        </div>
     </div>
-    <div class="slider-item">
-      <img src="https://picsum.photos/id/24/1200/600" alt="">
-    </div>
-    <div class="slider-item">
-      <img src="https://picsum.photos/id/44/1200/600" alt="">
-    </div>
-    <div class="slider-item">
-      <img src="https://picsum.photos/id/54/1200/600" alt="">
-    </div>
-  </div>
-  <script>
-    $(function () {
-      $('.slider').slick({
-        autoplay: false,
-        autoplaySpeed: 5000,
-        speed: 1500,
-        dots: true,
-        arrows: true,
-        pauseOnHover: false,
-        centerMode: true,
-        centerPadding: '100px'
-      });
-    })
-  </script>
+    <script>
+        $(function(){
+            $('.slider').slick({
+                autoplay: false,
+                autoplaySpeed: 5000,
+                speed:500,
+                dots: true,
+                arrows: true,
+                pauseOnHover: false,
+                centerMode: true,
+                centerPadding: '100px',
+                
+            });
+            $('.products').slick({
+                slidesToShow:5,
+                slidesToScroll: 1,
+                dots: true,
+                arrows: true,
+                responsive:[
+                    {
+                        breakpoint: 1200,
+                        settings:{
+                            slidesToShow:4,
+                            dots: false,
+                            arrows: false
+                        }
+                    },{
+                        breakpoint: 600,
+                        settings:{
+                            slidesToShow:2,
+                            arrows: false,
+                            dots: true
+                        }
+                    }
+                ]
+            })
+        })
+    </script>
 </body>
-
 </html>
