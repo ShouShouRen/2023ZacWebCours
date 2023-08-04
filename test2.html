@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Native JS Router</title>
+</head>
+<body>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+  </nav>
+  <div id="app"></div>
+
+  <script>
+    const routes = [
+      { path: '/', component: 'Home' },
+      { path: '/about', component: 'About' },
+      { path: '/contact', component: 'Contact' }
+    ];
+
+    const app = document.getElementById('app');
+
+    function renderComponent(componentName) {
+      app.innerHTML = `<h1>${componentName}</h1>`;
+    }
+
+    function handleRouteChange() {
+      const route = window.location.pathname;
+      const matchedRoute = routes.find(routeObj => routeObj.path === route);
+
+      if (matchedRoute) {
+        renderComponent(matchedRoute.component);
+      } else {
+        renderComponent('Not Found');
+      }
+    }
+
+    window.addEventListener('popstate', handleRouteChange);
+    window.addEventListener('load', handleRouteChange);
+  </script>
+</body>
+</html>

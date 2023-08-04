@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Native JS Router</title>
+</head>
+<body>
+  <nav>
+    <a href="#/">Home</a>
+    <a href="#/about">About</a>
+    <a href="#/contact">Contact</a>
+  </nav>
+  <div id="app"></div>
+
+  <script>
+    const routes = [
+      { path: '/', component: 'Home' },
+      { path: '/about', component: 'About' },
+      { path: '/contact', component: 'Contact' }
+    ];
+
+    const app = document.querySelector('app');
+
+    function renderComponent(componentName) {
+      if (componentName === 'Home') {
+        app.innerHTML = `
+          <h1>Welcome to the Home Page</h1>
+          <p>This is the home content...</p>
+        `;
+      } else if (componentName === 'About') {
+        app.innerHTML = `
+          <h1>About Us</h1>
+          <p>Learn more about our company...</p>
+        `;
+      } else if (componentName === 'Contact') {
+        app.innerHTML = `
+          <h1>Contact Us</h1>
+          <p>Get in touch with us...</p>
+        `;
+      } else {
+        app.innerHTML = `
+          <h1>Not Found</h1>
+          <p>The requested page was not found.</p>
+        `;
+      }
+    }
+
+    function handleRouteChange() {
+      const route = window.location.hash.slice(1);
+      const matchedRoute = routes.find(routeObj => routeObj.path === route);
+
+      if (matchedRoute) {
+        renderComponent(matchedRoute.component);
+      } else {
+        renderComponent('Not Found');
+      }
+    }
+
+    window.addEventListener('hashchange', handleRouteChange);
+    window.addEventListener('load', handleRouteChange);
+
+    // 添加默认路由
+    if (!window.location.hash) {
+      window.location.hash = '/';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <style>
+    .active {
+      background-color: #ccc;
+      color: #098;
+      padding: 20px;
+      transition: all 500ms;
+    }
+  </style>
+  <script>
+    $(function () {
+      $('.add').click(() => {
+        // $('p').hide();
+        // $('p').show();
+        $('p').addClass("active");
+      });
+      $('.remove').click(() => {
+        $('p').removeClass("active");
+      });
+      $('.toggle').click(() => {
+        $('p').toggleClass('active');
+      })
+    })
+  </script>
+  <title>Document</title>
+</head>
+
+<body>
+  <button class="add">add</button>
+  <button class="remove">remove</button>
+  <button class="toggle">toggle</button>
+  <h2>title</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt illum unde veritatis ipsam corrupti eum ad in
+    necessitatibus cumque rem odit obcaecati nemo culpa laborum velit, vel beatae possimus doloremque!</p>
+</body>
+
+</html>
