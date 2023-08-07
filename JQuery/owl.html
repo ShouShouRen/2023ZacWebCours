@@ -1,119 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
-    integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-    integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    body {
-      background-color: #f47171;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            background-color: #f47171;
+        }
+        .slider {
+            max-width: 1200px;
+            margin-inline: auto;
+        }
+        img {
+            width: 100%;
+        }
+        
 
-    .slider {
-      width: 1200px;
-      margin-inline: auto;
-    }
-
-    img {
-      width: 100%;
-    }
-
-    .products {
-      max-width: 1200px;
-      margin-inline: auto;
-    }
-
-    .owl-item .slider-item {
-      opacity: .7;
-      transition: 600ms;
-      scale: 0.8;
-    }
-
-    .center .slider-item {
-      opacity: 1;
-      scale: 1;
-    }
-  </style>
+        .products {
+            max-width: 1200px;
+            margin-inline: auto;
+        }
+      
+        
+        @media(min-width: 600px){
+            .products .owl-item .slider-item {
+                opacity: .2;
+                transform: scale(.7);
+                transition: 600ms;
+            }
+        }
+        .products .center .slider-item {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .owl-theme .owl-nav [class*=owl-]:hover {
+            /* background: transparent; */
+            background: initial;
+            color: yellow;
+        }
+    </style>
 </head>
-
 <body>
-  <div class="slider owl-carousel owl-theme">
-    <div class="slider-item">
-      <img src="https://picsum.photos/id/34/1200/600" alt="">
+    <div class="slider owl-carousel owl-theme">
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/34/1200/600" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/14/1200/600" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/24/1200/600" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/44/1200/600" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/54/1200/600" alt="">
+        </div>
     </div>
-    <div class="slider-item">
-      <img src="https://picsum.photos/id/14/1200/600" alt="">
+    <div class="products owl-carousel owl-theme">
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/34/600" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/14/600" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/24/600" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/44/600" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/54/600" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/35/600" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/15/600" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/25/600" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/45/600" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/55/600" alt="">
+        </div>
     </div>
-    <div class="slider-item">
-      <img src="https://picsum.photos/id/24/1200/600" alt="">
-    </div>
-    <div class="slider-item">
-      <img src="https://picsum.photos/id/44/1200/600" alt="">
-    </div>
-    <div class="slider-item">
-      <img src="https://picsum.photos/id/54/1200/600" alt="">
-    </div>
-  </div>
-  <div class="products owl-carousel owl-theme">
-    <div class="slider-item">
-      <img src="https://picsum.photos/id/34/600" alt="">
-    </div>
-    <div class="slider-item">
-      <img src="https://picsum.photos/id/14/600" alt="">
-    </div>
-    <div class="slider-item">
-      <img src="https://picsum.photos/id/24/600" alt="">
-    </div>
-    <div class="slider-item">
-      <img src="https://picsum.photos/id/44/600" alt="">
-    </div>
-    <div class="slider-item">
-      <img src="https://picsum.photos/id/54/600" alt="">
-    </div>
-    <div class="slider-item">
-      <img src="https://picsum.photos/id/35/600" alt="">
-    </div>
-    <div class="slider-item">
-      <img src="https://picsum.photos/id/15/600" alt="">
-    </div>
-    <div class="slider-item">
-      <img src="https://picsum.photos/id/25/600" alt="">
-    </div>
-    <div class="slider-item">
-      <img src="https://picsum.photos/id/45/600" alt="">
-    </div>
-    <div class="slider-item">
-      <img src="https://picsum.photos/id/55/600" alt="">
-    </div>
-  </div>
+    <script>
+        $(function(){
+            $('.slider').owlCarousel({
+                items:1,
+                autoplay: true,
+                autoplayTimeout: 6000,
+                autoplaySpeed: 2000,
+                navSpeed:2000,
+                dotsSpeed: 2000,
+                stagePadding: 70,
+                dots: true,
+                nav: true,
+                loop: true,
+                navText: ['<i class="fa-solid fa-caret-left fa-2x"></i>','<i class="fa-solid fa-caret-right fa-2x"></i>']
+            })
+            $('.products').owlCarousel({
+                items:6,
+                margin: 0,
+                loop: true,
+                responsive:{
+                    0:{
+                        items:2,
+                        nav: true,
+                        center: false,
+                        dots: false,
+                    },
+                    600:{
+                        items:4,
+                        nav: false,
+                        dots: true,
+                        center: true,
+                    },
+                    1200:{
+                        items: 6,
+                        nav: false,
+                        dots: true,
+                        center: true,
+                    }
+                }
+            })
+        })
+    </script>
 </body>
-<script>
-  $(function () {
-    $('.slider').owlCarousel({
-      items: 1,
-      autoplay: true
-    });
-    $('.products').owlCarousel({
-      items: 5,
-      autoplay: true,
-      margin: 10,
-      center: true,
-      loop: true,
-      nav: true
-    });
-  })
-</script>
-
 </html>

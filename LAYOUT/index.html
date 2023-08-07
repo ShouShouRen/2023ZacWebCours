@@ -12,12 +12,14 @@
 
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/js/uikit-icons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.compat.min.css" />
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <nav>
-        <a href="#" class="nav-logo"><img src="https://pics.seeds.com.tw/logo.png" style="max-width: 120px;" alt=""></a>
+        <a href="#" class="nav-logo wow bounce" data-wow-iteration="infinite"><img src="https://pics.seeds.com.tw/logo.png" style="max-width: 120px;" alt=""></a>
         <div class="nav-menu">
             <a href="#course" class="nav-link">課程</a>
             <a href="#people" class="nav-link">專訪</a>
@@ -71,7 +73,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-3 col-md-4 col-sm-6 col-12">
-                    <div class="course-card">
+                    <div class="course-card wow fadeInUp" data-wow-delay="1.5s">
                         <div class="cover">
                             <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1772&q=80"
                                 alt="">
@@ -97,7 +99,7 @@
                     </div>
                 </div>
                 <div class="col-xl-3 col-md-4 col-sm-6 col-12">
-                    <div class="course-card">
+                    <div class="course-card wow fadeInUp" data-wow-delay="1s">
                         <div class="cover">
                             <img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1771&q=80"
                                 alt="">
@@ -123,7 +125,7 @@
                     </div>
                 </div>
                 <div class="col-xl-3 col-md-4 col-sm-6 col-12">
-                    <div class="course-card">
+                    <div class="course-card wow fadeInUp" data-wow-delay="1.5s">
                         <div class="cover">
                             <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
                                 alt="">
@@ -149,7 +151,7 @@
                     </div>
                 </div>
                 <div class="col-xl-3 col-md-4 col-sm-6 col-12">
-                    <div class="course-card">
+                    <div class="course-card wow fadeInUp" data-wow-delay="1s">
                         <div class="cover">
                             <img src="https://images.unsplash.com/photo-1557180295-76eee20ae8aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1180&q=80"
                                 alt="">
@@ -175,7 +177,7 @@
                     </div>
                 </div>
                 <div class="col-xl-3 col-md-4 col-sm-6 col-12">
-                    <div class="course-card">
+                    <div class="course-card wow fadeInUp" data-wow-delay="1.5s">
                         <div class="cover">
                             <img src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
                                 alt="">
@@ -201,7 +203,7 @@
                     </div>
                 </div>
                 <div class="col-xl-3 col-md-4 col-sm-6 col-12">
-                    <div class="course-card">
+                    <div class="course-card wow fadeInUp" data-wow-delay="1s">
                         <div class="cover">
                             <img src="https://picsum.photos/id/34/500/" alt="">
                             <div class="cover-badge">立即上課</div>
@@ -226,7 +228,7 @@
                     </div>
                 </div>
                 <div class="col-xl-3 col-md-4 col-sm-6 col-12">
-                    <div class="course-card">
+                    <div class="course-card wow fadeInUp" data-wow-delay="1.5s">
                         <div class="cover">
                             <img src="https://images.unsplash.com/photo-1546173159-315724a31696?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
                                 alt="">
@@ -252,7 +254,7 @@
                     </div>
                 </div>
                 <div class="col-xl-3 col-md-4 col-sm-6 col-12">
-                    <div class="course-card">
+                    <div class="course-card wow fadeInUp" data-wow-delay="1s">
                         <div class="cover">
                             <img src="https://picsum.photos/id/34/500/" alt="">
                             <div class="cover-badge">立即上課</div>
@@ -348,5 +350,11 @@
         </div>
     </footer>
 </body>
+<script>
+   wow = new WOW({
+    offset: 150
+   }).init();
+
+</script>
 
 </html>

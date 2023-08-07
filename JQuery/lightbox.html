@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox-plus-jquery.min.js" integrity="sha512-U9dKDqsXAE11UA9kZ0XKFyZ2gQCj+3AwZdBMni7yXSvWqLFEj8C1s7wRmWl9iyij8d5zb4wm56j4z/JVEwS77g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    img{
+      width: 240px;
+    }
+  </style>
+</head>
+<body>
+  <a href="https://picsum.photos/id/45/1200/1000" data-lightbox="g1">
+    <img src="https://picsum.photos/id/45/1200/1000" alt="">
+  </a>
+  <a href="https://picsum.photos/id/22/1200/1000" data-lightbox="g1">
+    <img src="https://picsum.photos/id/22/1200/1000" alt="">
+  </a>
+  <a href="https://picsum.photos/id/56/1200/1000" data-lightbox="g1">
+    <img src="https://picsum.photos/id/56/1200/1000" alt="">
+  </a>
+  <script>
+    lightbox.option({
+      'albumLabel': '%1 / %2',
+      'fadeDuration': 2600,
+      'imageFadeDuration': 2600,
+      'resizeDuraion': 1600,
+    })
+  </script>
+</body>
+</html>
